@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.lang.reflect.GenericDeclaration;
+
 /**
  * 五毒解法：1.读题+思考；直接看解法并比较不同解法的优缺点
  * 2.直接写，提交-->优化
@@ -26,23 +29,32 @@ public class TestOne {
      * 链接：https://leetcode-cn.com/problems/move-zeroes
      * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * @param nums
+     * TODO 错误
      */
     public void moveZeroes(int[] nums) {
         //1、遍历数组，查询到有0的索引元素，和后一位元素交换位置，直到交换的元素为0
+        //2、指针 index
         int len = 0;
         int last;
-
         if (nums.length==0){
             return;
         }
 
-        for (int i = 0; i < nums.length-1; i++) {
-            if (nums[i]==len){
-                last = nums[i+1];
-                nums[i+1] = len;
-                nums[i] = last;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i]==0){
+                last = nums[i];
+                nums[i] = nums[len];
+                nums[len] = last;
             }
 
+            len++;
+        }
+
+        int temp ;
+        for (int start = 0,end = nums.length-1;start<end; start++,end--) {
+            temp = nums[end];
+            nums[end] = nums[start];
+            nums[start] = temp;
         }
     }
 }
