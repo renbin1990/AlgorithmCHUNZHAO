@@ -32,25 +32,26 @@ public class TestTwo {
      * @param nums
      * @param target
      */
-    private int[] twoSum(int[] nums, int target) {
+    private void twoSum(int[] nums, int target) {
+        //1暴力法
+        twoSumOne(nums,target);
+    }
 
+    private int[] twoSumOne(int[] nums, int target) {
         if (nums==null && nums.length<=1){
             return new int[]{0,0};
         }
 
         int j = 0;
         int k = 0;
-        int index = 0;
         for (int i = 0; i < nums.length-1; i++) {
-            index++;
-            if (nums[i]+nums[index]!=target){
-
-            }else {
-                j = i;
-                k = index;
+            for (int l = i+1; l < nums.length; l++) {
+                if (nums[i]+nums[l] == target){
+                    j = i;
+                    k = l;
+                }
             }
         }
-
         return new int[]{j,k};
     }
 
@@ -65,7 +66,27 @@ public class TestTwo {
      * @param nums
      */
     private void maxArea(int[] nums) {
-        //1、本质是求两个数的乘积最大值，
+        //1、本质是求两个数的乘积最大值，暴力法
+        maxAreaOne(nums);
+
+    }
+
+    private int maxAreaOne(int[] nums) {
+        if (nums.length<=1){
+            return 0;
+        }
+
+        int max = 0;
+        //[1,8,6,2,5,4,8,3,7]
+        for (int i = 0; i < nums.length-1; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                //获取高度差，算出面积
+                int writer = (j-i)*Math.min(nums[i],nums[j]);
+                max = Math.max(max,writer);
+            }
+        }
+
+        return max;
     }
 
     /**
