@@ -10,12 +10,12 @@ import java.util.*;
 public class TestFour {
 
     public static void main(String[] args) {
-      //  StackDemo();
-      //  QueueDemo();
+        StackDemo();
+       // QueueDemo();
       //  DequeDemo();
-     //   PriorityQueueDemo();
+      //  PriorityQueueDemo();
 
-        isValid("{[]}");
+     //   isValid("{[]}");
 
     }
 
@@ -26,7 +26,21 @@ public class TestFour {
     private static boolean isValid(String s) {
         //暴力法
         //遇到一边括号的，进栈，遇到另一边，弹出栈
-        return true;
+
+        Stack<Character> stack = new Stack<>();
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i]=='('){
+                stack.push(')');
+            }else if (chars[i]=='['){
+                stack.push(']');
+            }else if (chars[i]=='{'){
+                stack.push('}');
+            }else if (stack.empty() || stack.pop()!= chars[i]){
+                return false;
+            }
+        }
+        return stack.empty();
     }
 
     private static void PriorityQueueDemo() {
@@ -36,6 +50,11 @@ public class TestFour {
         priorityQueue.offer("3");
         priorityQueue.offer("4");
         priorityQueue.offer("5");
+
+        System.out.println(priorityQueue);
+        System.out.println(priorityQueue.size());
+        System.out.println(priorityQueue.remove("3"));
+        System.out.println(priorityQueue.size());
     }
 
     private static void DequeDemo() {
@@ -46,7 +65,7 @@ public class TestFour {
         deque.addLast("4");
         deque.addLast("5");
 
-        System.out.println(deque);   //12345
+        System.out.println(deque);   //32145
     }
 
     private static void QueueDemo() {
@@ -59,9 +78,9 @@ public class TestFour {
 
 
         System.out.println(queue.size());  //5
-        System.out.println(queue.poll());  //5
+        System.out.println(queue.poll());  //1
         System.out.println(queue.size());  //4
-        System.out.println(queue.peek());  //4
+        System.out.println(queue.peek());  //2
         System.out.println(queue);      //2345
 
     }
@@ -74,11 +93,12 @@ public class TestFour {
         stack.push("4");
         stack.push("5");
 
+        System.out.println(stack.search(2));  //2
         System.out.println(stack.empty());  //false
         System.out.println(stack.peek());  //5
         System.out.println(stack.size());  //5
         System.out.println(stack.pop());  //5
         System.out.println(stack.size());  //4
-        System.out.println(stack.search(2));  //2
+
     }
 }
