@@ -8,8 +8,6 @@ import java.util.Stack;
 public class StrackTraversal {
 
 
-
-
     /**
      * 前序遍历代码-使用栈
      * @param root
