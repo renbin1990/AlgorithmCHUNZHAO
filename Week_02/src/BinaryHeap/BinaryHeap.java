@@ -2,7 +2,11 @@ package BinaryHeap;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
+import java.util.PriorityQueue;
 
+/**
+ * 而叉堆
+ */
 public class BinaryHeap {
     private static final int d = 2;
     private int[] heap;
@@ -116,6 +120,8 @@ public class BinaryHeap {
     }
 
     public static void main(String[] args) {
+
+
         BinaryHeap maxHeap = new BinaryHeap(10);
         maxHeap.insert(10);
         maxHeap.insert(4);
@@ -130,4 +136,5 @@ public class BinaryHeap {
         maxHeap.delete(2);
         maxHeap.printHeap();
     }
+
 }
