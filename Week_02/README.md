@@ -56,7 +56,7 @@
                 二叉树演示链接：https://visualgo.net/zh/bst
         
         使用栈进行前中后序遍历:
-                完成教程:https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/zhuan-ti-jiang-jie-er-cha-shu-qian-zhong-hou-xu--2/
+                完整教程:（https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/zhuan-ti-jiang-jie-er-cha-shu-qian-zhong-hou-xu--2/）
                 前序遍历( Pre-order ) : 根 - 左 - 右
                     前序后序遍历，唯一区别就是， 一个一直向左， 一个一直向右
                     核心代码：
