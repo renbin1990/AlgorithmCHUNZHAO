@@ -2,7 +2,7 @@ package DivideConquer;
 
 public class DivideConquer {
 
-//    private static int divide_conquer(Problem problem,) {
+//    private static int divide_conquer(Problem problem,int params) {
 //        if (problem == NULL) {
 //            int res = process_last_result();
 //            return res;

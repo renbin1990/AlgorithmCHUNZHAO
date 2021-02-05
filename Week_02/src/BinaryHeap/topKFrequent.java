@@ -28,7 +28,12 @@ public class topKFrequent {
         System.out.println(map);
 
         //创建大顶堆
-        PriorityQueue<Map.Entry<Integer,Integer>> queue = new PriorityQueue<>((o1, o2) -> o2.getValue()-o1.getValue());
+        PriorityQueue<Map.Entry<Integer,Integer>> queue = new PriorityQueue<>(new Comparator<Map.Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                return o2.getValue() - o1.getValue();
+            }
+        });
 
         //便利map集合
         for (Map.Entry<Integer,Integer> entry:map.entrySet()){
