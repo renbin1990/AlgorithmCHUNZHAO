@@ -94,7 +94,8 @@
             动态规划：最优判断+回溯
 
 4、二分查找
-        
+
+        https://blog.csdn.net/xiao_jj_jj/article/details/106018702
         前提：目标函数的单调性（单调递增或者递减）
              存在上下界（bounded）
              能够通过索引访问（index accessible）
@@ -103,8 +104,7 @@
                 //排序
                 Arrays.sort(arr);
                 //获取最大值,左索引和右索引
-                int left  = 0, right = 0,mid;
-                int max = arr[arr.length-1];
+                int left  = 0, right = arr.length-1,mid;
         
                 while (left<=right){
                     mid = (right - left) / 2 + left;
@@ -112,10 +112,10 @@
                         return mid;
                         //说明这个数在右面
                     }else if (arr[mid] < num){
-                        right = mid+1;
+                        left = mid+1;
                         //说明这个数在左面
                     }else {
-                        left = mid-1;
+                        right= mid-1;
                     }
                 }
                 return -1;
