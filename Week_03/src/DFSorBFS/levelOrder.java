@@ -9,7 +9,7 @@ public class levelOrder {
     }
 
     /**
-     * 广度优先，一排一排的遍历
+     * 广度优先BFS，一排一排的遍历
      * @param root
      * @return
      */
