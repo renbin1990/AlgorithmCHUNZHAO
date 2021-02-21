@@ -12,11 +12,7 @@ public class CountThePaths {
      *      opt[i,j] = 0
      */
    public int  countthepaths(Boolean [][] grid,int row,int col){
-//
-//       if (!grid[row][col]){
-//            return 0;
-//       }
 
-       return countthepaths(grid,row+1,col)+countthepaths(grid,row,col+1);
+       return 0;
    }
 }
